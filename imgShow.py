@@ -18,7 +18,7 @@ def getTerminalSize():
 def resizeAndSave(imageName, basewidth):
     img = Image.open(imageName)
     wpercent = (basewidth/float(img.size[0]))
-    hsize = int((float(img.size[1])*float(wpercent))/2.4)
+    hsize = int((float(img.size[1])*float(wpercent))/2.0)
     img = img.resize((basewidth,hsize),Image.ANTIALIAS)
     img.save(imageName+'.gif')
     return img
@@ -26,7 +26,7 @@ def resizeAndSave(imageName, basewidth):
 
 def renderImage(fileName, pallette):
     termY,termX=getTerminalSize()
-    imgR = resizeAndSave(fileName, termX-10)
+    imgR = resizeAndSave(fileName, termX)
     imgX,imgY = imgR.size
     imageString = "\n"
     for j in range( imgY ):
