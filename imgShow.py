@@ -24,27 +24,17 @@ def resizeAndSave(imageName, basewidth):
     return img
     # print(img.getpixel((1, 2)))
 
-def showImage(fileName, pallette):
-    os.system("clear")
+def renderImage(fileName, pallette):
     termY,termX=getTerminalSize()
     imgR = resizeAndSave(fileName, termX-10)
     imgX,imgY = imgR.size
-
+    imageString = "\n"
     for j in range( imgY ):
         for i in range( imgX ):
-            print(
-                stylize(
-                    " ", 
-                    colored.bg(
-                        findNearestColor(
-                            imgR.getpixel((i,j)), pallette
-                        )
-
-                    )
-                ),
-                end=""
-            )
-        print()
+            color = colored.bg( findNearestColor( imgR.getpixel((i,j)), pallette ) )
+            imageString+= stylize( " ", color )
+        imageString+="\n"
+    return imageString
 
 
 
@@ -62,7 +52,10 @@ if __name__ == "__main__":
     
     XTermPallette = xtermPallette()
 
-    showImage(args.image, XTermPallette)
+    os.system("clear")
+
+    termImage = renderImage(args.image, XTermPallette)
+    print(termImage)
     #print(XTermPallette)
 
 
