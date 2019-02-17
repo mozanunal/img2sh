@@ -6,7 +6,10 @@ For color images 256 xterm color support is required. This script basically resi
 
 ### Demo
 
+Testing the package is super easy. Install and run.
+
 ```
+pip install img2sh --user
 img2sh demo.jpeg
 ```
 
@@ -14,6 +17,9 @@ Result:
 
 ![](https://user-images.githubusercontent.com/13440502/52919655-aa89d400-3315-11e9-8c4a-7a7e057b8fa4.png)
 
+
+
+For detailed usage arguments:
 
 ```
 usage: img2sh [-h] [-w WIDTH] Image
