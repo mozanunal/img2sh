@@ -3,9 +3,13 @@
 
 from setuptools import setup, find_packages
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     name='img2sh',
     version=__import__('img2sh').__version__,
+    install_requires=requirements,
     description=(
         'Show images directly on terminal using Xterm colors.'
     ),
@@ -17,7 +21,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     platforms=["all"],
-    url='http://github.com/peter-wangxu/persist-queue',
+    url='https://github.com/mozanunal/img2sh',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
