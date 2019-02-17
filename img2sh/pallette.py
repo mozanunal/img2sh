@@ -1,5 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 
 def xtermPallette():
 
@@ -266,9 +267,31 @@ def xtermPallette():
     for color in xtermColors:
         pallette.append(
             (
-                int(color[0:2],16),
-                int(color[2:4],16),
-                int(color[4:6],16)
+                int(color[0:2], 16),
+                int(color[2:4], 16),
+                int(color[4:6], 16)
             )
         )
     return pallette
+
+
+def binayPallette():
+    binayColors = [
+        "000000",
+        "ffffff"
+    ]
+
+    pallette = []
+    for color in binayColors:
+        pallette.append(
+            (
+                int(color[0:2], 16),
+                int(color[2:4], 16),
+                int(color[4:6], 16)
+            )
+        )
+    return pallette
+
+
+BINARY_PALLETTE = binayPallette()
+XTERM_PALLETTE = xtermPallette()

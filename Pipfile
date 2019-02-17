@@ -5,6 +5,7 @@ name = "pypi"
 
 [dev-packages]
 pylint = "<2.0.0"
+autopep8 = "*"
 
 [packages]
 colored = "*"
