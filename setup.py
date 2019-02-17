@@ -14,6 +14,7 @@ setup(
         'Show images directly on terminal using Xterm colors.'
     ),
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author="Mehmet Ozan Unal",
     author_email='mehmetozanunal@gmail.com',
     maintainer="Mehmet Ozan Unal",
