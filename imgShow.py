@@ -15,18 +15,17 @@ def getTerminalSize():
     c = int(columns)
     return r,c
 
-def resizeAndSave(imageName, basewidth):
+def resize(imageName, basewidth):
     img = Image.open(imageName)
     wpercent = (basewidth/float(img.size[0]))
     hsize = int((float(img.size[1])*float(wpercent))/2.0)
     img = img.resize((basewidth,hsize),Image.ANTIALIAS)
     img.save(imageName+'.gif')
     return img
-    # print(img.getpixel((1, 2)))
 
 def renderImage(fileName, pallette):
     termY,termX=getTerminalSize()
-    imgR = resizeAndSave(fileName, termX)
+    imgR = resize(fileName, termX)
     imgX,imgY = imgR.size
     imageString = "\n"
     for j in range( imgY ):
@@ -36,16 +35,19 @@ def renderImage(fileName, pallette):
         imageString+="\n"
     return imageString
 
+def isLink(test_string):
+    return test_string.startswith('http')
+
 
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser(description='Show images directly on terminal.')
     parser.add_argument(
         "-i","--image",
-        help="image dir"
+        help="image directory of link"
     )
 
     args = parser.parse_args()
