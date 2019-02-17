@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "02006b7f1820e5e8571e9a8e6c364bd9ddaeecbcc13bc7f4ed1f0708649a7ddf"
+            "sha256": "6c510f0df3b5ded761d3f824c70abc36244e6572f2078da415dc61a21f274a28"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,8 +18,7 @@
     "default": {
         "colored": {
             "hashes": [
-                "sha256:8296ea990e3f6b7822f44eec21408b126dfb9c1c031306b859e3f7d46cc27075",
-                "sha256:b30ab61720783dccc4f0055f4a58049d9cdcbdac2599ecf6baff5af35409ba08"
+                "sha256:8296ea990e3f6b7822f44eec21408b126dfb9c1c031306b859e3f7d46cc27075"
             ],
             "index": "pypi",
             "version": "==1.3.93"
@@ -69,12 +68,19 @@
             ],
             "version": "==1.6.5"
         },
+        "autopep8": {
+            "hashes": [
+                "sha256:33d2b5325b7e1afb4240814fe982eea3a92ebea712869bfd08b3c0393404248c"
+            ],
+            "index": "pypi",
+            "version": "==1.4.3"
+        },
         "backports.functools-lru-cache": {
             "hashes": [
                 "sha256:9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a",
                 "sha256:f0b0e4eba956de51238e17573b7087e852dfe9854afd2e9c873f73fc0ca0a6dd"
             ],
-            "markers": "python_version < '3.4'",
+            "markers": "python_version == '2.7'",
             "version": "==1.5"
         },
         "configparser": {
@@ -151,6 +157,13 @@
                 "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
             ],
             "version": "==0.6.1"
+        },
+        "pycodestyle": {
+            "hashes": [
+                "sha256:95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56",
+                "sha256:e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"
+            ],
+            "version": "==2.5.0"
         },
         "pylint": {
             "hashes": [
