@@ -18,15 +18,6 @@ def findNearestColor(color, pallette):
     return distances.index(min(distances))
 
 
-def resize(imageName, basewidth, crop=(0,0,100,100)):
-    img = Image.open(imageName) #.crop( crop )
-    wpercent = (basewidth/float(img.size[0]))
-    hsize = int((float(img.size[1])*float(wpercent))/2.0)
-    img = img.resize((basewidth, hsize), Image.ANTIALIAS)
-    # img.save(imageName+'.gif')
-    return img
-
-
 def getTerminalSize():
     rows, columns = os.popen('stty size', 'r').read().split()
     r = int(rows)
@@ -35,13 +26,36 @@ def getTerminalSize():
 
 
 class Renderer(object):
-    def __init__(self, colorPallette):
+    FONT_RATIO = 2.0
+
+    def __init__(self, fileName, colorPallette, wsize=None):
+        if wsize == None:
+            _, wsize = getTerminalSize()
+        try:
+            self.img = Image.open(fileName)
+        except:
+            print( "Image file cannot reached" )
+        self.wsize = wsize
         self.colorPallette = colorPallette
 
-    def render(self, fileName, width=None):
-        if width == None:
-            _, width = getTerminalSize()
-        imgR = resize(fileName, width)
+    def render(self, crop=None):
+        imgR = self.img
+        if crop != None:
+            imgR = imgR.crop(crop)
+        imgRX, imgRY = imgR.size
+        wpercent = (self.wsize/float(imgRX))
+        hsize = int((float(imgRY)*float(wpercent))/self.FONT_RATIO)
+        imgR = imgR.resize((self.wsize, hsize), Image.ANTIALIAS)
+        self._convertString(imgR)
+        return True
+
+    def show(self, interactive=False):
+        os.system("clear")
+        print(self.imageString)
+        if interactive:
+            self._interactive()
+    
+    def _convertString(self, imgR):
         imgX, imgY = imgR.size
         imageString = "\n"
         for j in range(imgY):
@@ -51,13 +65,12 @@ class Renderer(object):
                 imageString += stylize(" ", color)
             imageString += "\n"
         self.imageString = imageString
-        return imageString
 
-    def show(self, width=None):
-        os.system("clear")
-        print(self.imageString)
-        result = ""
-        while result != "q":
-            result = raw_input("q for quit z for zoom: ")
-            if result == "z":
+    def _interactive(self):
+        cmd = ""
+        while cmd != "q":
+            cmd = raw_input("q for quit z for zoom: ")
+            if cmd == "z":
+                self.render(crop=(0,0,100,100))
+                self.show()
                 print("aaaaaaaaaaaaa")

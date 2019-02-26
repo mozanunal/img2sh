@@ -23,9 +23,9 @@ def main():
 
     args = parser.parse_args()
 
-    r = Renderer(XTERM_PALLETTE)
-    r.render(args.Image, width=args.width)
-    r.show()
+    r = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
+    r.render()
+    r.show(interactive=True)
 
 if __name__ == "__main__":
     main()
