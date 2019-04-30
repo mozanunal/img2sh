@@ -1,6 +1,8 @@
 
 import math
 import os
+from six.moves import input
+
 from colored import stylize, bg
 from PIL import Image
 
