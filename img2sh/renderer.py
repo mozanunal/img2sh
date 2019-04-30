@@ -1,6 +1,8 @@
 
 import math
 import os
+from six.moves import input
+
 from colored import stylize, bg
 from PIL import Image
 
@@ -18,8 +20,8 @@ def findNearestColor(color, pallette):
     return distances.index(min(distances))
 
 
-def resize(imageName, basewidth, crop=(0,0,100,100)):
-    img = Image.open(imageName) #.crop( crop )
+def resize(imageName, basewidth, crop=(0, 0, 100, 100)):
+    img = Image.open(imageName)  # .crop( crop )
     wpercent = (basewidth/float(img.size[0]))
     hsize = int((float(img.size[1])*float(wpercent))/2.0)
     img = img.resize((basewidth, hsize), Image.ANTIALIAS)
@@ -58,6 +60,6 @@ class Renderer(object):
         print(self.imageString)
         result = ""
         while result != "q":
-            result = raw_input("q for quit z for zoom: ")
+            result = input("q for quit z for zoom: ")
             if result == "z":
                 print("aaaaaaaaaaaaa")
