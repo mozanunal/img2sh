@@ -9,7 +9,12 @@ from PIL import Image
 
 def findNearestColor(color, pallette):
     distances = []
-    (colorr, colorg, colorb) = color
+    if len(color) == 3:
+        (colorr, colorg, colorb) = color
+    elif len(color) == 4:
+        (colorr, colorg, colorb, alpha) = color
+        if alpha == 0:
+            return pallette.index((255,255,255))
     for c in pallette:
         (cr, cg, cb) = c
         distances.append(
@@ -42,8 +47,10 @@ class Renderer(object):
             self.error = self.ERROR_IMAGE_READ
         self.wsize = wsize
         self.colorPallette = colorPallette
+        self.renderCount = 0
 
     def render(self, crop=None):
+        self.renderCount += 1
         imgR = self.img
         if crop != None:
             imgR = imgR.crop(crop)
@@ -74,8 +81,9 @@ class Renderer(object):
     def _interactive(self):
         cmd = ""
         while cmd != "q":
-            cmd = raw_input("q for quit z for zoom: ")
+            cmd = input("q for quit z for zoom: ")
             if cmd == "z":
-                self.render(crop=(0,0,100,100))
+                w, h = self.img.size
+                self.render(crop=(w/4,h/4,3*w/4,3*h/4))
                 self.show()
-                print("aaaaaaaaaaaaa")
+                print(self.renderCount)

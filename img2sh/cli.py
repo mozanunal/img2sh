@@ -22,8 +22,8 @@ def main():
     )
     parser.add_argument(
         "-i", "--interactive",
+        default=False, action='store_true',
         help="Open image in interactive mode",
-        type=bool
     )
 
     args = parser.parse_args()
