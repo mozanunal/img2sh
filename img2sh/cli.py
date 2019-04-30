@@ -20,12 +20,18 @@ def main():
         help="image width",
         type=int
     )
+    parser.add_argument(
+        "-i", "--interactive",
+        help="Open image in interactive mode",
+        type=bool
+    )
 
     args = parser.parse_args()
 
     r = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
-    r.render()
-    r.show(interactive=True)
+    if r.error==None:
+        r.render()
+        r.show(interactive=args.interactive)
 
 if __name__ == "__main__":
     main()

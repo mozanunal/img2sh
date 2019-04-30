@@ -27,14 +27,17 @@ def getTerminalSize():
 
 class Renderer(object):
     FONT_RATIO = 2.0
-
+    ERROR_IMAGE_READ = 0
+    ERROR_RENDER = 1
     def __init__(self, fileName, colorPallette, wsize=None):
+        self.error = None
         if wsize == None:
             _, wsize = getTerminalSize()
         try:
             self.img = Image.open(fileName)
         except:
-            print( "Image file cannot reached" )
+            print( "ERROR: Image read" )
+            self.error = self.ERROR_IMAGE_READ
         self.wsize = wsize
         self.colorPallette = colorPallette
 
