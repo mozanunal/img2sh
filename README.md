@@ -72,8 +72,8 @@ pipenv shell
 
 In this repo issue based development is active. For any problems or new enhancements please open a issue.
 
-Autopep8 is using for formatting.
-Pylint is using for linting.
+Autopep8 is used for formatting.
+Pylint is used for linting.
 
 #### Deployment
 
