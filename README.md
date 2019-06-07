@@ -19,7 +19,7 @@ Result:
 
 ![](https://user-images.githubusercontent.com/13440502/59116723-e0020e00-8954-11e9-8d3a-e482ec543368.png)
 
-### Demo for interactive mode
+### Demo with interactive mode
 
 ```
 img2sh demo.jpeg -w 80 -i
@@ -28,6 +28,9 @@ q: quit z: zoom+ x: zoom- c: reset
 arrow keys for navigation 
 cmd: q
 ```
+
+![](https://user-images.githubusercontent.com/13440502/59120360-e34dc780-895d-11e9-8b2a-1d7ea5b25fe4.gif)
+
 
 
 For detailed usage arguments:
