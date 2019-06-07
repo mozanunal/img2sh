@@ -89,7 +89,7 @@ class Renderer(object):
         self.imageString = imageString
 
     def _interactive(self):
-        cmd = input("q: quit z: zoom+ x: zoom- c: reset \ncmd: ")
+        cmd = input("q: quit z: zoom+ x: zoom- c: reset \narrow keys for navigation \ncmd: ")
         if cmd == "q":
             return
         elif cmd == "z":

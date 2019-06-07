@@ -14,16 +14,16 @@ def main():
 
     parser = argparse.ArgumentParser(
         description='Show images directly on terminal.')
-    parser.add_argument("Image")
+    parser.add_argument("Image", help="the directory of the image which will be opened")
     parser.add_argument(
         "-w", "--width",
-        help="image width",
+        help="image width on the terminal",
         type=int
     )
     parser.add_argument(
         "-i", "--interactive",
         default=False, action='store_true',
-        help="Open image in interactive mode",
+        help="open image in interactive mode",
     )
 
     args = parser.parse_args()
