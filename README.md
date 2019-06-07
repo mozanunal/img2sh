@@ -14,10 +14,10 @@ img2sh demo.jpeg
 ```
 
 Result:
-<!-- 
-![](https://user-images.githubusercontent.com/13440502/52919655-aa89d400-3315-11e9-8c4a-7a7e057b8fa4.png) -->
+ 
+![](https://user-images.githubusercontent.com/13440502/52919655-aa89d400-3315-11e9-8c4a-7a7e057b8fa4.png) 
 
-![](https://user-images.githubusercontent.com/13440502/59116723-e0020e00-8954-11e9-8d3a-e482ec543368.png)
+<!--![](https://user-images.githubusercontent.com/13440502/59116723-e0020e00-8954-11e9-8d3a-e482ec543368.png)-->
 
 ### Demo with interactive mode
 
