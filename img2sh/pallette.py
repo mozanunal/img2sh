@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import numpy as np
 
 def xtermPallette():
 
@@ -272,7 +272,7 @@ def xtermPallette():
                 int(color[4:6], 16)
             )
         )
-    return pallette
+    return np.array(pallette)
 
 
 def binayPallette():

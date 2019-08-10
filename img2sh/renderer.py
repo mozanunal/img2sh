@@ -5,24 +5,20 @@ from six.moves import input
 from rect import Rect
 from colored import stylize, bg
 from PIL import Image
+import numpy as np
 
 
 def findNearestColor(color, pallette):
-    distances = []
     if len(color) == 3:
         (colorr, colorg, colorb) = color
     elif len(color) == 4:
         (colorr, colorg, colorb, alpha) = color
         if alpha == 0:
             return None  # pallette.index((255,255,255))
-    for c in pallette:
-        (cr, cg, cb) = c
-        distances.append(
-            (colorr-cr)**2 +
-            (colorg-cg)**2 +
-            (colorb-cb)**2
-        )
-    return distances.index(min(distances))
+    c = (colorr, colorg, colorb)
+    diff = pallette - c
+    diffSum = np.sum( np.square(diff), axis=1)
+    return np.argmin(diffSum)
 
 
 def getTerminalSize():
