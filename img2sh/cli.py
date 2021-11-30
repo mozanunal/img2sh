@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-from renderer import Renderer
-from pallette import XTERM_PALLETTE, BINARY_PALLETTE
+from .renderer import Renderer
+from .pallette import XTERM_PALLETTE, BINARY_PALLETTE
 
 
 def isLink(test_string):

@@ -2,10 +2,11 @@
 import math
 import os
 from six.moves import input
-from rect import Rect
 from colored import stylize, bg
 from PIL import Image
 import numpy as np
+
+from .rect import Rect
 
 
 def findNearestColor(color, pallette):
@@ -17,7 +18,7 @@ def findNearestColor(color, pallette):
             return None  # pallette.index((255,255,255))
     c = (colorr, colorg, colorb)
     diff = pallette - c
-    diffSum = np.sum( np.square(diff), axis=1)
+    diffSum = np.sum(np.square(diff), axis=1)
     return np.argmin(diffSum)
 
 
@@ -85,30 +86,31 @@ class Renderer(object):
         self.imageString = imageString
 
     def _interactive(self):
-        cmd = input("q: quit z: zoom+ x: zoom- c: reset \narrow keys for navigation \ncmd: ")
+        cmd = input(
+            "q: quit z: zoom+ x: zoom- c: reset \narrow keys for navigation \ncmd: ")
         if cmd == "q":
             return
         elif cmd == "z":
             self.render(
                 crop=self.crop.zoomRect()
-            )            
+            )
         elif cmd == "x":
             self.render(
-                crop=Rect(0,0,self.imgX,self.imgY)
+                crop=Rect(0, 0, self.imgX, self.imgY)
             )
         elif cmd == "c":
             self.render(
-                crop=Rect(0,0,self.imgX,self.imgY)
+                crop=Rect(0, 0, self.imgX, self.imgY)
             )
-        elif cmd == '\x1b[A': # up
+        elif cmd == '\x1b[A':  # up
             self.render(crop=self.crop.upRect())
-        elif cmd == '\x1b[B': # down
+        elif cmd == '\x1b[B':  # down
             self.render(crop=self.crop.downRect())
-        elif cmd == '\x1b[C': # right
+        elif cmd == '\x1b[C':  # right
             self.render(crop=self.crop.rightRect())
-        elif cmd == '\x1b[D': # left
+        elif cmd == '\x1b[D':  # left
             self.render(crop=self.crop.leftRect())
         else:
             print("Unkown", cmd)
         self.show(interactive=True)
-        #print(self.renderCount)
+        # print(self.renderCount)

@@ -74,15 +74,15 @@ python setup.py install
 
 #### Setup development environment
 
-Pipenv is using for environment management. 
+Conda is using for environment management. 
 
 ```
-pipenv install --dev
+conda create -n img2sh python=3.8
 ```
 
-Following command should be executed to create interactive shell in this pipenv.
+Following command should be executed to create interactive shell in this conda environment.
 ```
-pipenv shell
+conda activate img2sh
 ```
 
 #### Development
