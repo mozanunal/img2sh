@@ -7,6 +7,14 @@ from .pallette import XTERM_PALLETTE, BINARY_PALLETTE
 
 
 def isLink(test_string):
+    """check if the string is a web link
+
+    Args:
+        test_string (str): input string
+
+    Returns:
+        bool: if string is an http link
+    """
     return test_string.startswith('http')
 
 

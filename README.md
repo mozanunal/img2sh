@@ -90,7 +90,16 @@ conda activate img2sh
 In this repo issue based development is active. For any problems or new enhancements please open a issue.
 
 Autopep8 is used for formatting.
+
+```
+autopep8 -r -i img2sh
+```
+
 Pylint is used for linting.
+```
+
+```
+
 
 #### Deployment
 

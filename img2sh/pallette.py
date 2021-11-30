@@ -3,9 +3,9 @@
 import numpy as np
 
 
-def xtermPallette():
+def xterm_pallette():
 
-    xtermColors = [
+    xterm_colors = [
         "000000",
         "800000",
         "008000",
@@ -265,7 +265,7 @@ def xtermPallette():
     ]
 
     pallette = []
-    for color in xtermColors:
+    for color in xterm_colors:
         pallette.append(
             (
                 int(color[0:2], 16),
@@ -276,14 +276,14 @@ def xtermPallette():
     return np.array(pallette)
 
 
-def binayPallette():
-    binayColors = [
+def binay_pallette():
+    binay_colors = [
         "000000",
         "ffffff"
     ]
 
     pallette = []
-    for color in binayColors:
+    for color in binay_colors:
         pallette.append(
             (
                 int(color[0:2], 16),
@@ -294,5 +294,5 @@ def binayPallette():
     return pallette
 
 
-BINARY_PALLETTE = binayPallette()
-XTERM_PALLETTE = xtermPallette()
+BINARY_PALLETTE = binay_pallette()
+XTERM_PALLETTE = xterm_pallette()
