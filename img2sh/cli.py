@@ -1,20 +1,30 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
+"""cli module for img2sh"""
 from __future__ import print_function
-from renderer import Renderer
-from pallette import XTERM_PALLETTE, BINARY_PALLETTE
+from .renderer import Renderer
+from .pallette import XTERM_PALLETTE
 
 
-def isLink(test_string):
+def is_link(test_string):
+    """check if the string is a web link
+
+    Args:
+        test_string (str): input string
+
+    Returns:
+        bool: if string is an http link
+    """
     return test_string.startswith('http')
 
+
 def main():
+    """main cli function
+    """
     import argparse
 
     parser = argparse.ArgumentParser(
         description='Show images directly on terminal.')
-    parser.add_argument("Image", help="the directory of the image which will be opened")
+    parser.add_argument(
+        "Image", help="the directory of the image which will be opened")
     parser.add_argument(
         "-w", "--width",
         help="image width on the terminal",
@@ -28,10 +38,11 @@ def main():
 
     args = parser.parse_args()
 
-    r = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
-    if r.error==None:
-        r.render()
-        r.show(interactive=args.interactive)
+    renderer = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
+    if renderer.error is None:
+        renderer.render()
+        renderer.show(interactive=args.interactive)
+
 
 if __name__ == "__main__":
     main()

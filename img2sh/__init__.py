@@ -1,1 +1,2 @@
-__version__ = "0.1.7"
+"""img2sh main module"""
+__version__ = "0.2.2"
