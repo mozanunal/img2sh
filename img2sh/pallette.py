@@ -1,9 +1,12 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+"""pallette module for img2sh"""
 import numpy as np
 
-
 def xterm_pallette():
+    """return xterm pallette
+
+    Returns:
+        np.ndarray: xtermcolor pallette
+    """
 
     xterm_colors = [
         "000000",
@@ -277,6 +280,11 @@ def xterm_pallette():
 
 
 def binay_pallette():
+    """returns binary palette
+
+    Returns:
+        np.ndarray: binary palette
+    """
     binay_colors = [
         "000000",
         "ffffff"

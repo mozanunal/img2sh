@@ -97,7 +97,7 @@ autopep8 -r -i img2sh
 
 Pylint is used for linting.
 ```
-
+pylint img2sh
 ```
 
 

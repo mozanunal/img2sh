@@ -1,6 +1,8 @@
-
+"""rectangle module extended for navigation functions"""
 
 class Rect():
+    """Rectangle helper class
+    """
     def __init__(self, cor_x_1, cor_y_1, cor_x_2, cor_y_2):
         self.x_1 = cor_x_1
         self.y_1 = cor_y_1
@@ -17,7 +19,12 @@ class Rect():
             self.y_2
         )
 
-    def zoomRect(self):
+    def zoom_rect(self):
+        """zoom_rect
+
+        Returns:
+            Rect: mid zoomed rect
+        """
         return Rect(
             self.x_1 + (0.25 * self.width),
             self.y_1 + (0.25 * self.height),
@@ -25,7 +32,12 @@ class Rect():
             self.y_1 + (0.75 * self.height)
         )
 
-    def leftRect(self):
+    def left_rect(self):
+        """left_rect
+
+        Returns:
+            Rect: left rectangle
+        """
         return Rect(
             self.x_1 - (0.25 * self.width),
             self.y_1,
@@ -33,7 +45,12 @@ class Rect():
             self.y_2
         )
 
-    def rightRect(self):
+    def right_rect(self):
+        """right_rect
+
+        Returns:
+            Rect: right rectangle
+        """
         return Rect(
             self.x_1 + (0.25 * self.width),
             self.y_1,
@@ -41,7 +58,12 @@ class Rect():
             self.y_2
         )
 
-    def upRect(self):
+    def up_rect(self):
+        """up_rect
+
+        Returns:
+            Rect: up rectangle
+        """
         return Rect(
             self.x_1,
             self.y_1 - (0.25 * self.height),
@@ -49,7 +71,12 @@ class Rect():
             self.y_2 - (0.25 * self.height)
         )
 
-    def downRect(self):
+    def down_rect(self):
+        """down_rect
+
+        Returns:
+            Rect: down rectangle
+        """
         return Rect(
             self.x_1,
             self.y_1 + (0.25 * self.height),

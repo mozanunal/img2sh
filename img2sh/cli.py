@@ -1,12 +1,10 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
+"""cli module for img2sh"""
 from __future__ import print_function
 from .renderer import Renderer
-from .pallette import XTERM_PALLETTE, BINARY_PALLETTE
+from .pallette import XTERM_PALLETTE
 
 
-def isLink(test_string):
+def is_link(test_string):
     """check if the string is a web link
 
     Args:
@@ -19,6 +17,8 @@ def isLink(test_string):
 
 
 def main():
+    """main cli function
+    """
     import argparse
 
     parser = argparse.ArgumentParser(
@@ -38,10 +38,10 @@ def main():
 
     args = parser.parse_args()
 
-    r = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
-    if r.error == None:
-        r.render()
-        r.show(interactive=args.interactive)
+    renderer = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
+    if renderer.error is None:
+        renderer.render()
+        renderer.show(interactive=args.interactive)
 
 
 if __name__ == "__main__":
