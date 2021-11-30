@@ -57,7 +57,7 @@ class Renderer():
             crop (Rect, optional): crop image according to the given rect. Defaults to None.
 
         Returns:
-            bool: is it successfull or not
+            str: the result string
         """
         self.render_count += 1
         img_r = self.img
@@ -69,7 +69,7 @@ class Renderer():
         hsize = int((float(img_ry)*float(wpercent))/self.FONT_RATIO)
         img_r = img_r.resize((self.wsize, hsize), Image.ANTIALIAS)
         self._convert_string(img_r)
-        return True
+        return self.image_string
 
     def show(self, interactive=False):
         """clear the screen and renders the image

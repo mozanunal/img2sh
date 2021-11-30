@@ -1,6 +1,7 @@
 """pallette module for img2sh"""
 import numpy as np
 
+
 def xterm_pallette():
     """return xterm pallette
 

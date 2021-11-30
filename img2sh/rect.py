@@ -1,8 +1,10 @@
 """rectangle module extended for navigation functions"""
 
+
 class Rect():
     """Rectangle helper class
     """
+
     def __init__(self, cor_x_1, cor_y_1, cor_x_2, cor_y_2):
         self.x_1 = cor_x_1
         self.y_1 = cor_y_1

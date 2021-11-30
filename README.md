@@ -92,7 +92,7 @@ In this repo issue based development is active. For any problems or new enhancem
 Autopep8 is used for formatting.
 
 ```
-autopep8 -r -i img2sh
+autopep8 -r -i img2sh test
 ```
 
 Pylint is used for linting.
