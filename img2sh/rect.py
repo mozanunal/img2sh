@@ -19,40 +19,40 @@ class Rect(object):
 
     def zoomRect(self):
         return Rect(
-            self.x1 + ( 0.25 * self.width),
-            self.y1 + ( 0.25 * self.height),
-            self.x1 + ( 0.75 * self.width),
-            self.y1 + ( 0.75 * self.height)
+            self.x1 + (0.25 * self.width),
+            self.y1 + (0.25 * self.height),
+            self.x1 + (0.75 * self.width),
+            self.y1 + (0.75 * self.height)
         )
 
     def leftRect(self):
         return Rect(
-            self.x1 - ( 0.25 * self.width),
+            self.x1 - (0.25 * self.width),
             self.y1,
-            self.x2 - ( 0.25 * self.width),
+            self.x2 - (0.25 * self.width),
             self.y2
         )
 
     def rightRect(self):
         return Rect(
-            self.x1 + ( 0.25 * self.width),
+            self.x1 + (0.25 * self.width),
             self.y1,
-            self.x2 + ( 0.25 * self.width),
+            self.x2 + (0.25 * self.width),
             self.y2
         )
 
     def upRect(self):
         return Rect(
             self.x1,
-            self.y1 - ( 0.25 * self.height),
+            self.y1 - (0.25 * self.height),
             self.x2,
-            self.y2 - ( 0.25 * self.height)
+            self.y2 - (0.25 * self.height)
         )
 
     def downRect(self):
         return Rect(
             self.x1,
-            self.y1 + ( 0.25 * self.height),
+            self.y1 + (0.25 * self.height),
             self.x2,
-            self.y2 + ( 0.25 * self.height)
+            self.y2 + (0.25 * self.height)
         )
