@@ -23,5 +23,9 @@ jobs:
       run: |
         pylint img2sh --fail-under=9
     - name: Checking the formating of the code with autopep8
+      id: step-autopep8
       run: |
         autopep8 -r img2sh --diff
+    - name: Fail if autopep8 made changes
+      if: steps.step-autopep8.outputs.exit-code == 2
+      run: exit 1
