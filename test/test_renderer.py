@@ -9,6 +9,7 @@ def test_jpeg():
     result_img = renderer.render()
     f_true = open("examples/chrome.jpeg.bin", "r+")
     f_false = open("examples/chrome.png.bin", "r+")
+    assert renderer.wsize == 80
     assert result_img is not None
     assert len(result_img) == 48168
     assert f_true.read() == result_img

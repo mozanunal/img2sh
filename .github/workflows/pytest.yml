@@ -22,4 +22,4 @@ jobs:
         pip install .
     - name: Testing the code with pytest
       run: |
-        pytest
+        pytest --tb=line -s
