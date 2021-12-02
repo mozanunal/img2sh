@@ -39,7 +39,7 @@ def main():
     args = parser.parse_args()
 
     renderer = Renderer(args.Image, XTERM_PALLETTE, wsize=args.width)
-    if renderer.error is None:
+    if renderer.error is  None:
         renderer.render()
         renderer.show(interactive=args.interactive)
 
