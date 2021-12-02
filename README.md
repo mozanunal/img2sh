@@ -1,5 +1,9 @@
 # Img2sh
 
+[![autopep8](https://github.com/mozanunal/img2sh/actions/workflows/autopep8.yml/badge.svg)](https://github.com/mozanunal/img2sh/actions/workflows/autopep8.yml)
+[![pylint](https://github.com/mozanunal/img2sh/actions/workflows/pylint.yml/badge.svg)](https://github.com/mozanunal/img2sh/actions/workflows/pylint.yml)
+[![pytest](https://github.com/mozanunal/img2sh/actions/workflows/pytest.yml/badge.svg)](https://github.com/mozanunal/img2sh/actions/workflows/pytest.yml)
+
 Img2sh is a tool to show images directly on terminal.
 For color images 256 xterm color support is required. This script basically resize the image with antialliasing and quantized its colors to xterm color pallette.
 
