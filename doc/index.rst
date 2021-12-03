@@ -10,7 +10,9 @@ Welcome to img2sh's documentation!
    :maxdepth: 4
    :caption: Contents:
 
+   getting-started
    img2sh
+   
 
 
 Indices and tables
